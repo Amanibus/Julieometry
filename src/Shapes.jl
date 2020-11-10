@@ -13,9 +13,9 @@ struct Triangle{T} <: AbstractShape
 end
 
 function area(tr::Triangle)
-  b=p2-p1
+  b=tr.p2-tr.p1
   l=norm(b)
   bnorm=b/l
-  h=bnorm'*(p3-p1)
+  h=bnorm'*(tr.p3-tr.p1)
   return abs(l*h/2)
 end
